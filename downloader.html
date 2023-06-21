@@ -6,6 +6,11 @@
 <body>
   <h1>URL Downloader</h1>
 
+  <div>
+    <label for="filename">File Name:</label>
+    <span id="filename"></span>
+  </div>
+
   <button onclick="downloadFile()">Download File</button>
 
   <script>
@@ -26,6 +31,7 @@
     function getFileNameFromURL(url) {
       var path = url.split('/').pop();
       var filename = path.split('?')[0];
+      document.getElementById("filename").textContent = filename;
       return filename;
     }
   </script>
