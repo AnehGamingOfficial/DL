@@ -16,6 +16,7 @@
   <hr class="lineyy">
 </div>
    <h2><span id="file-name">Uploader : </span> <span id="uploader">Aneh Gaming</span></h2>
+  <h2><span id="file-name">File Type : </span> <span id="uploader">Zip Compressed</span></h2>
 
  <div align="center" class="container" onclick="vngbanner();">
     <a href="" class="button">
@@ -47,40 +48,35 @@
 </script>
   
   <script>
-    window.onload = function() {
-      var urlParams = new URLSearchParams(window.location.search);
-      var url = urlParams.get('url');
-      if (url) {
-        var filenameaneh = getFileNameFromURL(url);
-        document.getElementById("filenameaneh").textContent = filenameaneh;
-      }
-    };
-
-    function downloadFile() {
-      var urlParams = new URLSearchParams(window.location.search);
-      var url = urlParams.get('url');
-      if (url) {
-        var link = document.createElement("a");
-        link.href = url;
-        link.download = getFileNameFromURL(url);
-        link.style.display = "none";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      }
-    }   
-   
-
-    function getFileNameFromURL(url) {
-  var path = url.split('/').pop();
-  var filename = path.split('?')[0];
-  filename = decodeURIComponent(filename);
-  var dotIndex = filename.lastIndexOf('.');
-  if (dotIndex !== -1) {
-    filename = filename.substring(0, dotIndex);
+window.onload = function() {
+  var urlParams = new URLSearchParams(window.location.search);
+  var url = urlParams.get('url');
+  if (url) {
+    var filename = getFileNameFromURL(url);
+    document.getElementById("filename").textContent = filename;
   }
+};
+
+function downloadFile() {
+  var urlParams = new URLSearchParams(window.location.search);
+  var url = urlParams.get('url');
+  if (url) {
+    var link = document.createElement("a");
+    link.href = url;
+    link.download = getFileNameFromURL(url);
+    link.style.display = "none";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+}
+
+function getFileNameFromURL(url) {
+  var path = url.split('/').pop();
+  var filename = decodeURIComponent(path);
   return filename;
 }
+
   </script>
 
 </body>
