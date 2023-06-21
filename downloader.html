@@ -35,13 +35,14 @@
         link.click();
         document.body.removeChild(link);
       }
-    }
-
+    }   
     function getFileNameFromURL(url) {
-      var path = url.split('/').pop();
-      var filename = path.split('?')[0];
-      return filename;
-    }
+  var path = url.split('/').pop();
+  var filename = path.split('?')[0];
+  filename = decodeURIComponent(filename);
+  return filename;
+}
+
   </script>
 </body>
 </html>
