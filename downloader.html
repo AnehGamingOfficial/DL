@@ -15,9 +15,6 @@
     <form>
       <button type="submit"  class="btn btn-warning btn-lg btn-block">Click Me</button>
     </form> 
-    <form class="mt-4">
-      <button type="submit"  class="btn btn-outline-primary btn-lg btn-block">Click Me</button>
-    </form>   
       </div>
 </div>
 </div>
@@ -62,12 +59,11 @@
 
     
 <style>
-form{
+form {
   display: block;
   width: 100%;
 }
-
-button{
+button {
   position: relative;
   
   &:before {
@@ -86,7 +82,7 @@ button{
     transition: opacity 0.5s;
     animation: 0.8s linear infinite rotate;
   }
-  &.sending{
+  &.sending {
     pointer-events: none;
     cursor: not-allowed;
     
@@ -98,14 +94,6 @@ button{
   }
 }
 
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 </style>
 <script>
   $('form').on('submit',function(e){
