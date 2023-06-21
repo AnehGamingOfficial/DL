@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>File Information Example</title>
+  <script>
+    function getFileInformation() {
+      var downloadLink = document.getElementById('download-link');
+      
+      var xhr = new XMLHttpRequest();
+      xhr.open('HEAD', downloadLink.href, true);
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          var fileSize = xhr.getResponseHeader('Content-Length');
+          var fileType = xhr.getResponseHeader('Content-Type');
+          
+          document.getElementById('file-size').textContent = 'File Size: ' + fileSize + ' bytes';
+          document.getElementById('file-type').textContent = 'File Type: ' + fileType;
+        }
+      };
+      xhr.send();
+    }
+  </script>
+</head>
+<body>
+  <h1>File Information Example</h1>
+  
+  <a id="download-link" href="path/to/your/file" onclick="getFileInformation()">Download File</a>
+  <p id="file-size"></p>
+  <p id="file-type"></p>
+</body>
+</html>
