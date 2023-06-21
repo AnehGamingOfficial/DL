@@ -197,49 +197,6 @@
 		 transform: scaleY(1);
 	}
 }
- html {
-	 box-sizing: border-box;
-	 -webkit-font-smoothing: antialiased;
-}
- * {
-	 box-sizing: inherit;
-}
- *:before, *:after {
-	 box-sizing: inherit;
-}
- body {
-	 min-height: 100vh;
-	 display: flex;
-	 font-family: 'Roboto', Arial;
-	 justify-content: center;
-	 align-items: center;
-	 background: #e4ecfa;
-}
- body .container {
-	 display: flex;
-	 flex-wrap: wrap;
-	 justify-content: center;
-}
- body .container > div {
-	 flex-basis: 100%;
-	 width: 0;
-}
- body .container .button {
-	 margin: 16px;
-}
- @media (max-width: 400px) {
-	 body .container .button {
-		 margin: 12px;
-	}
-}
- body .dribbble {
-	 position: fixed;
-	 display: block;
-	 right: 20px;
-	 bottom: 20px;
-}
- body .dribbble img {
-	 display: block;
-	 height: 28px;
-}
+
+
  
