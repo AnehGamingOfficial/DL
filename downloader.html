@@ -14,6 +14,15 @@
   <button onclick="downloadFile()">Download File</button>
 
   <script>
+    window.onload = function() {
+      var urlParams = new URLSearchParams(window.location.search);
+      var url = urlParams.get('url');
+      if (url) {
+        var filename = getFileNameFromURL(url);
+        document.getElementById("filename").textContent = filename;
+      }
+    };
+
     function downloadFile() {
       var urlParams = new URLSearchParams(window.location.search);
       var url = urlParams.get('url');
@@ -31,7 +40,6 @@
     function getFileNameFromURL(url) {
       var path = url.split('/').pop();
       var filename = path.split('?')[0];
-      document.getElementById("filename").textContent = filename;
       return filename;
     }
   </script>
