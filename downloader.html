@@ -15,12 +15,18 @@
       if (url) {
         var link = document.createElement("a");
         link.href = url;
-        link.download = "downloaded_file";
+        link.download = getFileNameFromURL(url);
         link.style.display = "none";
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
       }
+    }
+
+    function getFileNameFromURL(url) {
+      var path = url.split('/').pop();
+      var filename = path.split('?')[0];
+      return filename;
     }
   </script>
 </body>
