@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>HTML Download Link Generator</title>
-  <script>
-    function generateDownloadLink() {
-      var url = document.getElementById("urlInput").value;
-      var linkContainer = document.getElementById("linkContainer");
-
-      linkContainer.innerHTML = '<a href="' + url + '" download>Download</a>';
-    }
-  </script>
+  <title>URL Generator</title>
 </head>
 <body>
-  <h1>HTML Download Link Generator</h1>
+  <h1>URL Generator</h1>
   <label for="urlInput">Enter URL:</label>
   <input type="text" id="urlInput">
-  <button onclick="generateDownloadLink()">Generate Download Link</button>
-  <div id="linkContainer"></div>
+  <button onclick="generateLink()">Generate Link</button>
+
+  <script>
+    function generateLink() {
+      var url = document.getElementById("urlInput").value;
+      var link = document.createElement("a");
+      link.href = "downloader.html?url=" + encodeURIComponent(url);
+      link.innerHTML = "Download URL";
+      document.body.appendChild(link);
+    }
+  </script>
 </body>
 </html>
