@@ -6,18 +6,22 @@
 <body>
   <h1>URL Downloader</h1>
 
+  <button onclick="downloadFile()">Download File</button>
+
   <script>
-    window.onload = function() {
+    function downloadFile() {
       var urlParams = new URLSearchParams(window.location.search);
       var url = urlParams.get('url');
       if (url) {
         var link = document.createElement("a");
         link.href = url;
         link.download = "downloaded_file";
-        link.innerHTML = "Download URL";
+        link.style.display = "none";
         document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
       }
-    };
+    }
   </script>
 </body>
 </html>
