@@ -32,12 +32,19 @@
         document.body.removeChild(link);
       }
     }   
+   
+
     function getFileNameFromURL(url) {
   var path = url.split('/').pop();
   var filename = path.split('?')[0];
   filename = decodeURIComponent(filename);
+  var dotIndex = filename.lastIndexOf('.');
+  if (dotIndex !== -1) {
+    filename = filename.substring(0, dotIndex);
+  }
   return filename;
 }
+
 
   </script>
 </body>
