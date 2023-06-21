@@ -1,20 +1,17 @@
-$(function() {
-  var btn = $(".btn");
+var download = $('.download'),
+    meter = $('.meter');
+
+$('.button-download').on('click', function(e) {
+  download.toggleClass('is-active');
   
-  btn.on("click", function() {
-    
-    $(this).addClass('btn-progress');
-    setTimeout(function() {
-      btn.addClass('btn-fill')
-    }, 500);
-    
-    setTimeout(function() {
-      btn.removeClass('btn-fill')
-    }, 4100);
-    
-    setTimeout(function() {
-      btn.addClass('btn-complete')
-    }, 4100);
+  setTimeout(function() {
+    meter.toggleClass('is-done');
+  }, 4000);
   
-  });
-})
+  e.preventDefault();
+});
+
+$('#reset').on('click', function() {
+  download.removeClass('is-active');
+  meter.removeClass('is-done');
+});
