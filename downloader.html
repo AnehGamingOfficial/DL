@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Downloader</title>
+  <title>URL Downloader</title>
+</head>
+<body>
+  <h1>URL Downloader</h1>
+
   <script>
     window.onload = function() {
       var urlParams = new URLSearchParams(window.location.search);
       var url = urlParams.get('url');
       if (url) {
-        window.location.href = url;
+        var link = document.createElement("a");
+        link.href = url;
+        link.download = "downloaded_file";
+        link.innerHTML = "Download URL";
+        document.body.appendChild(link);
       }
     };
   </script>
-</head>
-<body>
-  <h1>Downloading...</h1>
 </body>
 </html>
