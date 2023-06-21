@@ -18,18 +18,19 @@
 
 
   <button onclick="downloadFile()">Download File</button>
-  <div align="center"  class="container" >
-   <a href="" class="button">
-    <ul style="display: inline-block;">
-        <li>&#68;ownload</li>
-        <li>&#68;ownloading</li>
-        <li>Open File</li>
-    </ul>
-    <div style="display: inline;">
-        <svg viewBox="0 0 24 24"></svg>
-    </div>
-</a>
- </div>
+  <div align="center" class="container">
+    <a href="" class="button">
+        <ul style="display: inline-block;">
+            <li>&#68;ownload</li>
+            <li>&#68;ownloading</li>
+            <li>Open File</li>
+        </ul>
+        <div style="display: inline;">
+            <svg viewBox="0 0 24 24"></svg>
+        </div>
+    </a>
+</div>
+
  
   <script>
     window.onload = function() {
@@ -70,6 +71,11 @@
 
 </body>
 <style>
+.container {
+  width: fit-content;
+  margin: 0 auto;
+}
+  
   .button.dark-single {
     --background: none;
     --rectangle: #242836;
